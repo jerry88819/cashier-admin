@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Cahier</title>
+</head>
+<body>
+<h1>Ball Cashier</h1>
+<hr>
+<a href="/user/logout">logout</a>
+<hr>
+<a href="/user/changePassword">change password</a>
+<hr>
+<a href="/user/order/1">Check User Info</a>  <!-- 從第1分頁開始 -->
+
+
+{% if msg %}
+    <p style="color: #f00">{{ msg }}</p>
+{% endif %}
+
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>public_key</th>
+        <th>username</th>
+        <th>password</th>
+        <th>totp_secret</th>
+        <th>created_at</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>{{ info.ID }}</td>
+        <td>{{ info.Name }}</td>
+        <td>{{ info.PublicKey }}</td>
+        <td>{{ info.Username }}</td>
+        <td>{{ info.Password }}</td>
+        <td>{{ info.TotpSecret }}</td>
+        <td>{{ info.CreatedAt }}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
